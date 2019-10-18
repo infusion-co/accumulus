@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "798029cc494eef0bc5c16f616463daac",
+    "revision": "047b7794d38305b104833ac91d10424a",
     "url": "/accumulus/index.html"
   },
   {
-    "revision": "c4ba81620c64cadd7330",
-    "url": "/accumulus/static/css/main.ec6c6253.chunk.css"
+    "revision": "8f2fb044659b0a49acd7",
+    "url": "/accumulus/static/css/main.db4a703d.chunk.css"
   },
   {
-    "revision": "e5fe2d474dbce083c8ee",
-    "url": "/accumulus/static/js/2.54555428.chunk.js"
+    "revision": "b05b3f3d7a2ef3cb7d1a",
+    "url": "/accumulus/static/js/2.2e374f18.chunk.js"
   },
   {
-    "revision": "c4ba81620c64cadd7330",
-    "url": "/accumulus/static/js/main.5ec4c8f9.chunk.js"
+    "revision": "8f2fb044659b0a49acd7",
+    "url": "/accumulus/static/js/main.148ce8fe.chunk.js"
   },
   {
     "revision": "175c133b3f31571024f8",
@@ -104,6 +104,22 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/accumulus/static/media/B6.0159fbf4.wav"
   },
   {
+    "revision": "fc10e2288962e6d0d4805f1be43b95d1",
+    "url": "/accumulus/static/media/Bass1.fc10e228.ogg"
+  },
+  {
+    "revision": "2e3b58a054d1918e9cf0afc917d52a44",
+    "url": "/accumulus/static/media/Bass2.2e3b58a0.ogg"
+  },
+  {
+    "revision": "ee6f22cefda1d08287b67fa04a2994bc",
+    "url": "/accumulus/static/media/Bass3.ee6f22ce.ogg"
+  },
+  {
+    "revision": "3a3becf068e8221e959e0dc5002f2894",
+    "url": "/accumulus/static/media/Bass4.3a3becf0.ogg"
+  },
+  {
     "revision": "b7c2f2c16e057258d9e9f8ef0c30f46d",
     "url": "/accumulus/static/media/C0.b7c2f2c1.wav"
   },
@@ -134,6 +150,22 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "62f1f6acbf1541bfe07b76eb31fe4b25",
     "url": "/accumulus/static/media/C7.62f1f6ac.wav"
+  },
+  {
+    "revision": "61bdd5f1430310c3bf688f95dba5958f",
+    "url": "/accumulus/static/media/Chords1.61bdd5f1.ogg"
+  },
+  {
+    "revision": "c8f1276f0756b915361ba8b4d636438a",
+    "url": "/accumulus/static/media/Chords2.c8f1276f.ogg"
+  },
+  {
+    "revision": "b34fa81a542d36a231e5e10ee14f8b5c",
+    "url": "/accumulus/static/media/Chords3.b34fa81a.ogg"
+  },
+  {
+    "revision": "b1f3c06176ce50e33c91791d12facd9c",
+    "url": "/accumulus/static/media/Chords4.b1f3c061.ogg"
   },
   {
     "revision": "a7648be8ef7f6d189ad5e58d7452029e",
@@ -190,6 +222,22 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "e926b0078f9a02f4a5d17c85dedce686",
     "url": "/accumulus/static/media/D6.e926b007.wav"
+  },
+  {
+    "revision": "0d214398546e8537ac90354c0ec5995d",
+    "url": "/accumulus/static/media/Drums1.0d214398.ogg"
+  },
+  {
+    "revision": "8389a0d7630e4438b097486283cc9ff8",
+    "url": "/accumulus/static/media/Drums2.8389a0d7.ogg"
+  },
+  {
+    "revision": "ad521650410245c96440121e2b79def8",
+    "url": "/accumulus/static/media/Drums3.ad521650.ogg"
+  },
+  {
+    "revision": "1473f24f871f8573d339388c08b1986e",
+    "url": "/accumulus/static/media/Drums4.1473f24f.ogg"
   },
   {
     "revision": "cd6a059990f5408d8ab59da76f6fefb0",
@@ -358,6 +406,22 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "c867a1706e74d776eb6576489a773bf9",
     "url": "/accumulus/static/media/Gs6.c867a170.wav"
+  },
+  {
+    "revision": "a03952337aae0643f106b6f575ac824c",
+    "url": "/accumulus/static/media/Melodies1.a0395233.ogg"
+  },
+  {
+    "revision": "172849417cbb4d6ca38d65da532ebb60",
+    "url": "/accumulus/static/media/Melodies2.17284941.ogg"
+  },
+  {
+    "revision": "420765b390909fe37a950f4dd7fd2421",
+    "url": "/accumulus/static/media/Melodies3.420765b3.ogg"
+  },
+  {
+    "revision": "2ecef98b9b1b1ff03a3952c472e4081a",
+    "url": "/accumulus/static/media/Melodies4.2ecef98b.ogg"
   },
   {
     "revision": "948824f2009e8e5c27ca9a0f42e8bb01",
