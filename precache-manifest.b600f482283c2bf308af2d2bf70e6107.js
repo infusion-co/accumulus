@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7d464bc9ad0d253a23a1990ea0798032",
+    "revision": "b9c5e1d33e121b691bcebf68d34c41d0",
     "url": "/accumulus/index.html"
   },
   {
-    "revision": "d5128bf5c2c8a63e89d3",
+    "revision": "8c9009cc9f8260ee78d9",
     "url": "/accumulus/static/css/main.9f531f77.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/accumulus/static/js/2.4554046e.chunk.js"
   },
   {
-    "revision": "d5128bf5c2c8a63e89d3",
-    "url": "/accumulus/static/js/main.6f85799c.chunk.js"
+    "revision": "8c9009cc9f8260ee78d9",
+    "url": "/accumulus/static/js/main.e5f1c38b.chunk.js"
   },
   {
     "revision": "175c133b3f31571024f8",
