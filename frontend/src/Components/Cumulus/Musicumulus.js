@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { TweenLite, TweenMax, Bounce } from 'gsap/TweenMax';
+import { TweenLite, TweenMax, Bounce, Power2 } from 'gsap/TweenMax';
 import { random } from 'utils/helpers';
 import { Nuage } from './Nuage';
 import Tone from 'tone';
@@ -25,6 +25,9 @@ const Musicumulus = ({
   var cumulus = null;
   const volume = new Tone.Channel(-5).connect(Tone.Master);
 
+  const [backgroundColor, setBackgroundColor] = useState('white');
+  const [fontColor, setFontColor] = useState('black');
+
   const [isArrived, arrive] = useState(false);
   useEffect(() => {
     if (isArrived) handleSkyLanding();
@@ -38,18 +41,32 @@ const Musicumulus = ({
     });
 
     const blowUp = (cumulus, note) => {
+      if (replacementPos) {
+        setBackgroundColor(replacementPos.background);
+        setFontColor('white');
+      }
+
       TweenMax.to(cumulus, debug ? 0.1 : 5, {
         y: 100,
         // opacity: replacementPos ? 1 : 0,
         onStart: () => null, // playNote(note),
         onComplete: () =>
           new Promise(resolve => {
-            let hoveringAltitude = 80;
+            if (isOptimal) {
+              setBackgroundColor('yellow');
+              setFontColor('black');
+            }
+            let hoveringAltitude = 60;
+            const hoveringDeplacementTimeMillis = isOptimal ? 500 : 1000;
             const hoveringInterval = setInterval(() => {
-              TweenMax.to(cumulus, 0.5, { y: hoveringAltitude, ease: Bounce.easeOut });
-              hoveringAltitude = hoveringAltitude === 100 ? 80 : 100;
-            }, 500);
+              TweenMax.to(cumulus, hoveringDeplacementTimeMillis / 1000, {
+                y: hoveringAltitude,
+                ease: isOptimal ? Bounce.easeOut : Power2.easeOut,
+              });
+              hoveringAltitude = hoveringAltitude === 120 ? 60 : 120;
+            }, hoveringDeplacementTimeMillis);
 
+            const hoveringTime = isOptimal ? 5000 : 3000;
             setTimeout(
               () => {
                 Tone.Transport.stop();
@@ -68,7 +85,7 @@ const Musicumulus = ({
                   debug ? 50 : 1000,
                 );
               },
-              debug ? 10 : 2000,
+              debug ? 10 : hoveringTime,
             );
           }).then(cumulus => {
             if (!replacementPos) {
@@ -114,17 +131,10 @@ const Musicumulus = ({
 
     twinTo(0, cumulus)();
   }, [cumulus]);
-  const color = { fontColor: 'black', background: 'white' };
-  if (isOptimal) {
-    color.background = 'yellow';
-  } else if (replacementPos) {
-    color.background = replacementPos.background;
-    color.fontColor = 'white';
-  }
 
   return (
     <div id={cloudId} ref={div => (cumulus = div)} className="cumulus" style={{ opacity: 0.9 }}>
-      <Nuage color={color.background} fontColor={color.fontColor} nuageName={nuageName} baseWidth={baseWidth} />
+      <Nuage color={backgroundColor} fontColor={fontColor} nuageName={nuageName} baseWidth={baseWidth} />
     </div>
   );
 };

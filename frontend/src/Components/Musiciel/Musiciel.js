@@ -30,7 +30,7 @@ export const deriveMax = window.innerWidth - cloudBaseWidth;
 const verticalspace = Math.round((musicSheetHeight - headerHeight) / 2.5);
 
 const REPLACEMENT_THRESHOLD = 0.4;
-const SIMILARITY_GAP_THRESHOLD = 0.15;
+const OPTIMAL_GAP_THRESHOLD = 0.15;
 
 export const backgrounds = ['#F8B195', '#F67280', '#C06C84', '#355C7D'];
 
@@ -90,7 +90,7 @@ const Musiciel = ({ location: { search } }) => {
           background: backgrounds[index],
         });
       }
-      if (Math.abs(chord.note - targets[index]) < SIMILARITY_GAP_THRESHOLD) {
+      if (Math.abs(chord.note - targets[index]) < OPTIMAL_GAP_THRESHOLD) {
         optimalPath += 1;
       }
     });
@@ -113,7 +113,7 @@ const Musiciel = ({ location: { search } }) => {
   };
 
   const getBaseWidth = () => {
-    return Math.max(Math.round(random(100, 180)), nuageName.length * 10);
+    return Math.max(Math.round(random(100, 180)), nuageName.length * 12);
   };
 
   // const urlParam = new URLSearchParams(search);
