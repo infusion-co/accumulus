@@ -11,7 +11,7 @@ import RainLogo from 'icons/rain.png';
 
 import Cumulus from '../Cumulus/Cumulus';
 import './style.css';
-import { API_BASE_URL, API_GATEWAY_PATH, API_NUAGE_PATH, GATEWAY_SOCKET_PATH } from 'utils/constants';
+import { API_BASE_URL, API_GATEWAY_PATH, API_NUAGE_PATH } from 'utils/constants';
 
 import Switch from '@material-ui/core/Switch';
 // const rimages = require('utils/dictionnage.json');
@@ -27,7 +27,7 @@ const nuagesToCloud = (name, clouds) => {
   fetchRequest(url, 'POST', body);
 };
 
-const socket = sockeIOClient(`${API_BASE_URL}${API_GATEWAY_PATH}`, { path: GATEWAY_SOCKET_PATH });
+const socket = sockeIOClient(API_BASE_URL, { path: API_GATEWAY_PATH });
 
 const Ciel = ({ cloud9 }) => {
   // const [clouds, setClouds] = useState(['age', 'cage', 'rage', 'duage', 'hommage']);

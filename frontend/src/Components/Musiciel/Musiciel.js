@@ -14,7 +14,7 @@ import {
   AIR_GUITAR_OFFSET,
   API_BASE_URL,
   API_SIMILARITY_PATH,
-  GATEWAY_SOCKET_PATH,
+  GATEWAY_SOCKET_URL,
 } from 'utils/constants';
 import { pentaMinor } from '../../helpers/generator';
 import WanderingCumulus from 'Components/Cumulus/WanderingCumulus';
@@ -167,7 +167,7 @@ const Musiciel = ({ location: { search } }) => {
 
   // receive clouds from other skies
   useEffect(() => {
-    const socket = sockeIOClient(`${API_BASE_URL}${API_GATEWAY_PATH}`, { path: GATEWAY_SOCKET_PATH });
+    const socket = sockeIOClient(API_BASE_URL, { path: API_GATEWAY_PATH });
     socket.on('upload', async upcomingClouds => {
       if (upcomingClouds.length === 0) return;
       let musicloudOffset = 0;
