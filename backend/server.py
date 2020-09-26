@@ -12,13 +12,16 @@ app = Flask(__name__)
 
 CORS(app)
 
+
 @app.route('/')
 def hello():
     return "Hello World!"
 
+
 @app.route('/name/<name>')
 def hello_name(name):
     return "Hello {}!".format(name)
+
 
 @app.route('/fakesimilarity')
 def return_random_float():
@@ -27,7 +30,7 @@ def return_random_float():
 
 @app.route('/similaritya', methods=['GET', 'POST'])
 def similarity():
-    if request.method == 'POST':  #this block is only entered when the form is submitted
+    if request.method == 'POST':  # this block is only entered when the form is submitted
         word1 = request.form.get('word1')
         word2 = request.form['word2']
         similarity_words = word_similarity.similarity(word1, word2)
@@ -44,7 +47,8 @@ def similarity():
               </form>'''
 
 
-@app.route('/word_music_sheet', methods=['POST']) #GET requests will be blocked
+# GET requests will be blocked
+@app.route('/word_music_sheet', methods=['POST'])
 def similarity_word_listchords():
     req_data = request.get_json()
 
@@ -79,6 +83,6 @@ def main():
 
 
 if __name__ == '__main__':
-    if os.environ.get('WERKZEUG_RUN_MAIN') == 'true':
-        main()
-    app.run(debug=True, port=5000)
+    print('go main')
+    main()
+    app.run(host='0.0.0.0', debug=False, port=5000)

@@ -42,7 +42,7 @@ def load_list_chords(chordsname, nb_chords=4, shuffle=True):
             chord = {
                 "leftNote": line.split(",")[0],
                 "rightNote": line.split(",")[1]
-                }
+            }
             if WORDEMBEDDER is not None:
                 if chord["leftNote"] not in WORDEMBEDDER:
                     print("leftnote: %s not in vocab" % chord["leftNote"])

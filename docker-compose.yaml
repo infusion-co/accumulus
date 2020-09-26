@@ -1,0 +1,13 @@
+version: "2"
+services:
+  server:
+    build:
+      context: ./backend
+    ports:
+      - 5000:5000
+    volumes:
+      - ./backend:/app
+    depends_on:
+      - redis
+  redis:
+    image: redis
