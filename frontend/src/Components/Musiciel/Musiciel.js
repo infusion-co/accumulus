@@ -9,10 +9,14 @@ import { fetchRequest } from '../../utils/helpers';
 import './style.css';
 import Musicumulus from '../Cumulus/Musicumulus';
 import { AirGuitar } from '../AirGuitar';
-import { API_GATEWAY_URL, API_GATEWAY_PATH, AIR_GUITAR_OFFSET } from 'utils/constants';
-import makePiece, { generateRandomSequence } from '../../helpers/generator';
+import {
+  API_GATEWAY_PATH,
+  AIR_GUITAR_OFFSET,
+  API_BASE_URL,
+  API_SIMILARITY_PATH,
+  GATEWAY_SOCKET_PATH,
+} from 'utils/constants';
 import { pentaMinor } from '../../helpers/generator';
-import { addPattern } from '../../helpers/generator';
 import WanderingCumulus from 'Components/Cumulus/WanderingCumulus';
 import { random } from 'utils/helpers';
 
@@ -150,7 +154,10 @@ const Musiciel = ({ location: { search } }) => {
 
   const getMusicSheet = async (word, chords) => {
     try {
-      const response = await fetchRequest('http://127.0.0.1:5000/word_music_sheet', 'POST', { word, chords });
+      const response = await fetchRequest(`${API_BASE_URL}${API_SIMILARITY_PATH}/word_music_sheet`, 'POST', {
+        word,
+        chords,
+      });
       const sheet = await response.json();
       return sheet;
     } catch {
@@ -160,7 +167,7 @@ const Musiciel = ({ location: { search } }) => {
 
   // receive clouds from other skies
   useEffect(() => {
-    const socket = sockeIOClient(API_GATEWAY_URL, { path: API_GATEWAY_PATH });
+    const socket = sockeIOClient(`${API_BASE_URL}${API_GATEWAY_PATH}`, { path: GATEWAY_SOCKET_PATH });
     socket.on('upload', async upcomingClouds => {
       if (upcomingClouds.length === 0) return;
       let musicloudOffset = 0;

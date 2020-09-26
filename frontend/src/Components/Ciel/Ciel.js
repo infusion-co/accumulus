@@ -22,12 +22,12 @@ const rimeWith = (word, suffixe) => {
 };
 
 const nuagesToCloud = (name, clouds) => {
-  const url = `${API_BASE_URL}/accumulus`;
+  const url = `${API_BASE_URL}${API_NUAGE_PATH}/accumulus`;
   const body = { name, nuages: clouds };
   fetchRequest(url, 'POST', body);
 };
 
-const socket = sockeIOClient(API_GATEWAY_URL, { path: API_GATEWAY_PATH });
+const socket = sockeIOClient(`${API_BASE_URL}${API_GATEWAY_PATH}`, { path: GATEWAY_SOCKET_PATH });
 
 const Ciel = ({ cloud9 }) => {
   // const [clouds, setClouds] = useState(['age', 'cage', 'rage', 'duage', 'hommage']);
