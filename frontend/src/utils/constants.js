@@ -1,4 +1,4 @@
-export const API_BASE_URL = process.env.NODE_ENV === 'development' ? 'http://localhost' : 'http://51.158.71.201';
+export const API_BASE_URL = process.env.NODE_ENV === 'development' ? 'http://localhost' : 'https://kavok.fr';
 
 export const API_NUAGE_PATH = process.env.NODE_ENV === 'development' ? ':8000' : '/nuage';
 
